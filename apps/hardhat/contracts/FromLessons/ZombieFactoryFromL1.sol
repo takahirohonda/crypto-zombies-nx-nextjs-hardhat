@@ -6,8 +6,6 @@ contract ZombieFactory {
   uint dnaDigits = 16;
   uint dnaModulus = 10 ** dnaDigits; // the modulo will make sure DNA has only 16 digits.
 
-  event NewZombie(uint zombieId, string name, uint dna);
-
   struct Zombie {
     string name;
     uint dna;
@@ -15,18 +13,13 @@ contract ZombieFactory {
 
   Zombie[] public zombies;
 
-  mapping (uint => address) public zombieOwner;
-  mapping (address => uint) public ownerZombieCount;
-
+  event NewZombie(uint zombieId, string name, uint dna);
 
   function _createZombie(string memory _name, uint _dna) private {
-   
+     // in the tutorial, it is uint id = zombies.push(Zombie(_name, _dna)) - 1; but won't work any. length is better
+    // push function for dynamic array no longer returns the new length of the array after Solidity 0.6.0.
     zombies.push(Zombie(_name, _dna));
-
     uint id = zombies.length;
-    zombieOwner[id] = msg.sender;
-    ownerZombieCount[msg.sender]++;
-
     emit NewZombie(id, _name, _dna);
   }
 
@@ -36,11 +29,8 @@ contract ZombieFactory {
   }
  
   function createRamdomZombie(string memory _name) public {
-
-    require(ownerZombieCount[msg.sender] == 0, "You already have a zombie");
-    
     uint randDna = _generateRandomDna(_name);
-    _createZombie(_name, randDna);
+    _createZombie(_name, randDna); 
   }
 }
 
