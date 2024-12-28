@@ -15,7 +15,7 @@ contract ZombieFactory {
 
   Zombie[] public zombies;
 
-  mapping (uint => address) public zombieOwner;
+  mapping (uint => address) public zombieToOwner;
   mapping (address => uint) public ownerZombieCount;
 
 
@@ -24,7 +24,7 @@ contract ZombieFactory {
     zombies.push(Zombie(_name, _dna));
 
     uint id = zombies.length;
-    zombieOwner[id] = msg.sender;
+    zombieToOwner[id] = msg.sender;
     ownerZombieCount[msg.sender]++;
 
     emit NewZombie(id, _name, _dna);
