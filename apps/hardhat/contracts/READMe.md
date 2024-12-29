@@ -127,3 +127,51 @@ contract SandwichFactory {
   }
 }
 ```
+
+# Chapter 10 & 11: Interacting with other contracts
+
+To interact with another contract on the blockchain, we first need to define an interface.
+
+For example, this contract exists on the chain.
+
+```solidity
+contract LuckyNumber {
+  mapping(address => uint) numbers;
+
+  function setNum(uint _num) public {
+    numbers[msg.sender] = _num;
+  }
+
+  function getNum(address _myAddress) public view returns (uint) {
+    return numbers[_myAddress];
+  }
+}
+```
+
+Then, we define an interface of the contract.
+
+- If there is no curly braces, the compiler knows it is an interface.
+- Define only the function we want to interact with and don't mention any of the other function or state variables.
+
+```solidity
+contract NumberInterface {
+  function getNum(address _myAddress) public view returns (uint);
+}
+```
+
+Once the interface is defined, we can use the contract address to get the contract instance and call the function.
+
+```solidity
+contract MyContract {
+  address NumberInterfaceAddress = 0xab38...
+  // ^ The address of the FavoriteNumber contract on Ethereum
+  NumberInterface numberContract = NumberInterface(NumberInterfaceAddress);
+  // Now `numberContract` is pointing to the other contract
+
+  function someFunction() public {
+    // Now we can call `getNum` from that contract:
+    uint num = numberContract.getNum(msg.sender);
+    // ...and do something with `num` here
+  }
+}
+```
