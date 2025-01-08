@@ -23,7 +23,7 @@ export const WalletConnectModal = ({
       <ModalContent>
         {(onClose) => (
           <>
-            <ModalHeader className="flex flex-col gap-1">
+            <ModalHeader className="flex flex-col gap-1 text-center">
               Connect Wallet
             </ModalHeader>
             <ModalBody>

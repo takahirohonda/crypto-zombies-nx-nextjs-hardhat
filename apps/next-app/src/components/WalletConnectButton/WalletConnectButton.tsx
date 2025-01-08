@@ -11,7 +11,10 @@ export const WalletConnectButton = () => {
   const { disconnect } = useDisconnect()
   return (
     <>
-      <Button onPress={isConnected ? () => disconnect() : onOpen}>
+      <Button
+        onPress={isConnected ? () => disconnect() : onOpen}
+        color="danger"
+      >
         {isConnected ? formatAddress(address as string) : 'Connect to wallet'}
       </Button>
       <WalletConnectModal isOpen={isOpen} onOpenChange={onOpenChange} />

@@ -6,7 +6,11 @@ export const WalletOptions = () => {
   const { connectors, connect } = useConnect()
 
   return connectors.map((connector) => (
-    <Button key={connector.uid} onPress={() => connect({ connector })}>
+    <Button
+      key={connector.uid}
+      onPress={() => connect({ connector })}
+      color="success"
+    >
       {connector.name}
     </Button>
   ))
