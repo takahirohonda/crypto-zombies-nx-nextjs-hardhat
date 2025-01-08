@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@nextui-org/react'
 import { BrandHeader } from './BrandHeader'
+import { WalletConnectButton } from '../WalletConnectButton/WalletConnectButton'
 
 export const Nav = () => {
   return (
@@ -11,7 +11,7 @@ export const Nav = () => {
         <a href="/">Home</a>
       </div>
       <div className="flex">
-        <Button onPress={() => alert('hello world')}>Connect to wallet</Button>
+        <WalletConnectButton />
       </div>
     </nav>
   )
