@@ -53,6 +53,13 @@
       "options": {
         "command": "yarn hardhat node --config apps/hardhat/hardhat.local.config.ts --tsconfig apps/hardhat/tsconfig.json"
       }
+    },
+
+    "typechain": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat typechain --config apps/hardhat/hardhat.local.config.ts --tsconfig apps/hardhat/tsconfig.json"
+      }
     }
   }
 }
