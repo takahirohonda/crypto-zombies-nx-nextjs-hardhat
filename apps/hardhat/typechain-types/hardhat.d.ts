@@ -18,9 +18,29 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Counter__factory>;
     getContractFactory(
+      name: "ZombieFactory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ZombieFactory__factory>;
+    getContractFactory(
       name: "Lock",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.Lock__factory>;
+    getContractFactory(
+      name: "ZombieFactory",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ZombieFactory__factory>;
+    getContractFactory(
+      name: "ZombieFactoryTestForFrontEndSetup",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ZombieFactoryTestForFrontEndSetup__factory>;
+    getContractFactory(
+      name: "KittyInterface",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.KittyInterface__factory>;
+    getContractFactory(
+      name: "ZombieFeeding",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ZombieFeeding__factory>;
 
     getContractAt(
       name: "Counter",
@@ -28,19 +48,64 @@ declare module "hardhat/types/runtime" {
       signer?: ethers.Signer
     ): Promise<Contracts.Counter>;
     getContractAt(
+      name: "ZombieFactory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ZombieFactory>;
+    getContractAt(
       name: "Lock",
       address: string | ethers.Addressable,
       signer?: ethers.Signer
     ): Promise<Contracts.Lock>;
+    getContractAt(
+      name: "ZombieFactory",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ZombieFactory>;
+    getContractAt(
+      name: "ZombieFactoryTestForFrontEndSetup",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ZombieFactoryTestForFrontEndSetup>;
+    getContractAt(
+      name: "KittyInterface",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.KittyInterface>;
+    getContractAt(
+      name: "ZombieFeeding",
+      address: string | ethers.Addressable,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ZombieFeeding>;
 
     deployContract(
       name: "Counter",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Counter>;
     deployContract(
+      name: "ZombieFactory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFactory>;
+    deployContract(
       name: "Lock",
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Lock>;
+    deployContract(
+      name: "ZombieFactory",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFactory>;
+    deployContract(
+      name: "ZombieFactoryTestForFrontEndSetup",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFactoryTestForFrontEndSetup>;
+    deployContract(
+      name: "KittyInterface",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.KittyInterface>;
+    deployContract(
+      name: "ZombieFeeding",
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFeeding>;
 
     deployContract(
       name: "Counter",
@@ -48,10 +113,35 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Counter>;
     deployContract(
+      name: "ZombieFactory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFactory>;
+    deployContract(
       name: "Lock",
       args: any[],
       signerOrOptions?: ethers.Signer | DeployContractOptions
     ): Promise<Contracts.Lock>;
+    deployContract(
+      name: "ZombieFactory",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFactory>;
+    deployContract(
+      name: "ZombieFactoryTestForFrontEndSetup",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFactoryTestForFrontEndSetup>;
+    deployContract(
+      name: "KittyInterface",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.KittyInterface>;
+    deployContract(
+      name: "ZombieFeeding",
+      args: any[],
+      signerOrOptions?: ethers.Signer | DeployContractOptions
+    ): Promise<Contracts.ZombieFeeding>;
 
     // default types
     getContractFactory(

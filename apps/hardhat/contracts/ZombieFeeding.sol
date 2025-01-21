@@ -1,9 +1,10 @@
-pragma solidity >=0.5.0 <0.6.0;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.28;
 
 import "./ZombieFactory.sol";
 
-contract KittyInterface {
-  function getKitty(uint256 _id) external view returns (
+abstract contract KittyInterface {
+  function getKitty(uint256 _id) external virtual view returns (
     bool isGestating,
     bool isReady,
     uint256 cooldownIndex,
@@ -27,8 +28,8 @@ contract ZombieFeeding is ZombieFactory {
     require(msg.sender == zombieToOwner[_zombieId]);
 
     Zombie storage myZombie = zombies[_zombieId];
-    _targetDna = _targetDna % danModulus;
-    unit newDna = (myZombie.dna + _targetDna) / 2;
+    _targetDna = _targetDna % dnaModulus;
+    uint newDna = (myZombie.dna + _targetDna) / 2;
 
     if (keccak256(abi.encodePacked(_species)) == keccak256(abi.encodePacked("kitty"))) {
       newDna = newDna - newDna % 100 + 99;
@@ -39,7 +40,7 @@ contract ZombieFeeding is ZombieFactory {
   function feedOnKitty(uint _zombieId, uint _kittyId) public {
     uint kittyDna;
     (,,,,,,,,,kittyDna) = kittyContract.getKitty(_kittyId);
-    feedAndMultiply(_zombieId, kittyDnam, "kitty");
+    feedAndMultiply(_zombieId, kittyDna, "kitty");
   }
 
 }

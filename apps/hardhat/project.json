@@ -29,6 +29,13 @@
         "command": "yarn hardhat run apps/hardhat/deploy-scripts/deployCounterTestnet.ts --config apps/hardhat/hardhat.config.ts --tsconfig apps/hardhat/tsconfig.json"
       }
     },
+
+    "deploy:zombie:alchemy-sepolia": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "yarn hardhat run apps/hardhat/deploy-scripts/deployZombieFactory.ts --config apps/hardhat/hardhat.config.ts --tsconfig apps/hardhat/tsconfig.json"
+      }
+    },
     "test-by-grep": {
       "executor": "nx:run-commands",
       "options": {
