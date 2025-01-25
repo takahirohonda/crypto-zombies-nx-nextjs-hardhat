@@ -5,11 +5,11 @@ import { injected, metaMask, safe } from 'wagmi/connectors'
 // Declaration merging - https://wagmi.sh/react/typescript
 declare module 'wagmi' {
   interface Register {
-    config: typeof config
+    config: typeof wagmiConfig
   }
 }
 
-export const config = createConfig({
+export const wagmiConfig = createConfig({
   chains: [mainnet, sepolia],
   connectors: [
     // https://wagmi.sh/react/api/connectors/injected

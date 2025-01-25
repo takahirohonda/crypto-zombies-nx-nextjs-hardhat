@@ -3,7 +3,7 @@ import './global.css'
 import { Nav } from '../components/Nav/Nav'
 import { NextUIProviderWrapper } from '../components/NextUIProviderWrapper/NextUIProviderWrapper'
 import { WagmiProviderWrapper } from '../components/WagmiProviderWrapper/WagmiProviderWrapper'
-import { Metadata } from 'next'
+import { type Metadata, type Viewport } from 'next'
 
 export const metadata: Metadata = {
   title: 'CryptoZombies',
@@ -32,11 +32,14 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/manifest.json',
-  themeColor: '#ffffff',
   other: {
     'msapplication-TileColor': '#ffffff',
     'msapplication-TileImage': '/favicon/ms-icon-144x144.png',
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({
