@@ -3,6 +3,9 @@
 import Image from 'next/image'
 import { GenerateMyZombie } from './GenerateMyZombie'
 import { MyZombie } from './MyZombie'
+import { Counter } from '../components/TestingContract/Counter'
+import { Level } from '../components/TestingContract/Level'
+import { Character } from '../components/TestingContract/Character'
 
 export default function Index() {
   return (
@@ -19,6 +22,9 @@ export default function Index() {
       <div className="flex flex-col">
         <GenerateMyZombie />
         <MyZombie />
+        <Counter />
+        <Level />
+        <Character />
       </div>
     </div>
   )
