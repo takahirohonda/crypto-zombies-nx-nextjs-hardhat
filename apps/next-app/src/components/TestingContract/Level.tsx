@@ -7,6 +7,7 @@ import { useAccount } from 'wagmi'
 import { useReadContract, useWriteContract } from 'wagmi'
 import { wagmiConfig } from '../../config/wagmiConfig'
 import { LEVEL_CONTRACT_ADDRESS } from '../../const'
+import { decodeEventLog } from 'viem'
 
 export const Level = () => {
   const { data: hash, writeContract } = useWriteContract()
@@ -33,16 +34,20 @@ export const Level = () => {
     account: address,
   })
 
-  const [level, setLevel] = useState(0)
+  const [level, setLevel] = useState('')
 
   useEffect(() => {
+    setLevel(data?.toString() ?? '')
     const unwatch = watchContractEvent(wagmiConfig, {
       address: LEVEL_CONTRACT_ADDRESS,
       abi: levelAbi,
       eventName: 'IncrementLevel',
       onLogs(logs) {
-        console.log('New logs!', JSON.stringify(logs))
-        // setLevel(logs[0]?.data)
+        console.log('New logs!', logs)
+
+        console.log(`checking logs[0].args.level: ${logs[0].args.level}`)
+        const newLevel = logs[0].args.level
+        setLevel(newLevel?.toString() ?? '')
       },
     })
     return () => unwatch()
@@ -51,7 +56,7 @@ export const Level = () => {
   return (
     <div className="flex gap-[16px]">
       <Button onPress={incrementLevel}>Increment Level</Button>
-      <p>Current Level: {data?.toString()}</p>
+      <p>Current Level: {level?.toString()}</p>
     </div>
   )
 }
