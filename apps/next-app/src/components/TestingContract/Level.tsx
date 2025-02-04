@@ -7,7 +7,6 @@ import { useAccount } from 'wagmi'
 import { useReadContract, useWriteContract } from 'wagmi'
 import { wagmiConfig } from '../../config/wagmiConfig'
 import { LEVEL_CONTRACT_ADDRESS } from '../../const'
-import { decodeEventLog } from 'viem'
 
 export const Level = () => {
   const { data: hash, writeContract } = useWriteContract()

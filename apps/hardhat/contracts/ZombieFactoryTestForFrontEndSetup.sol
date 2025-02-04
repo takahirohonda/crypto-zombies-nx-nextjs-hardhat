@@ -35,7 +35,7 @@ contract ZombieFactoryTestForFrontEndSetup {
     return rand % dnaModulus; // this will ensure the DNA only has 16 digits.
   }
  
-  function createRamdomZombie(string memory _name) public {
+  function createRandomZombie(string memory _name) public {
 
     require(ownerZombieCount[msg.sender] == 0, "You already have a zombie");
     
@@ -54,6 +54,21 @@ contract ZombieFactoryTestForFrontEndSetup {
     }
 
     revert("No zombie found for the sender");
+  }
+
+  // just testing...
+  function getCurrentMsgSenderValue() public view returns (address) {
+    return msg.sender;
+  }
+
+    // Function to get the zombie owner by zombie ID
+  function getZombieOwnerById(uint zombieId) public view returns (address) {
+    return zombieToOwner[zombieId];
+  }
+
+  // Function to get the count of zombies owned by an address
+  function getZombieCountByOwner(address owner) public view returns (uint) {
+    return ownerZombieCount[owner];
   }
 }
 

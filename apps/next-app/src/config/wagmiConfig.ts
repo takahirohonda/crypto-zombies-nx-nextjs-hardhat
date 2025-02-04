@@ -1,5 +1,5 @@
 import { http, createConfig } from 'wagmi'
-import { mainnet, sepolia } from 'wagmi/chains'
+import { hardhat, mainnet, sepolia } from 'wagmi/chains'
 import { injected, metaMask, safe } from 'wagmi/connectors'
 
 // Declaration merging - https://wagmi.sh/react/typescript
@@ -10,7 +10,7 @@ declare module 'wagmi' {
 }
 
 export const wagmiConfig = createConfig({
-  chains: [mainnet, sepolia],
+  chains: [mainnet, sepolia, hardhat],
   connectors: [
     // https://wagmi.sh/react/api/connectors/injected
     injected(),
@@ -21,6 +21,7 @@ export const wagmiConfig = createConfig({
   transports: {
     [mainnet.id]: http(),
     [sepolia.id]: http(),
+    [hardhat.id]: http('http://127.0.0.1:8545'),
   },
 })
 

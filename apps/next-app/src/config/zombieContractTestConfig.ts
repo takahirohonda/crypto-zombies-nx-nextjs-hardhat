@@ -37,9 +37,22 @@ export const zombieContractTestConfig = {
           type: 'string',
         },
       ],
-      name: 'createRamdomZombie',
+      name: 'createRandomZombie',
       outputs: [],
       stateMutability: 'nonpayable',
+      type: 'function',
+    },
+    {
+      inputs: [],
+      name: 'getCurrentMsgSenderValue',
+      outputs: [
+        {
+          internalType: 'address',
+          name: '',
+          type: 'address',
+        },
+      ],
+      stateMutability: 'view',
       type: 'function',
     },
     {
@@ -62,6 +75,44 @@ export const zombieContractTestConfig = {
           internalType: 'struct ZombieFactoryTestForFrontEndSetup.Zombie',
           name: '',
           type: 'tuple',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
+    {
+      inputs: [
+        {
+          internalType: 'address',
+          name: 'owner',
+          type: 'address',
+        },
+      ],
+      name: 'getZombieCountByOwner',
+      outputs: [
+        {
+          internalType: 'uint256',
+          name: '',
+          type: 'uint256',
+        },
+      ],
+      stateMutability: 'view',
+      type: 'function',
+    },
+    {
+      inputs: [
+        {
+          internalType: 'uint256',
+          name: 'zombieId',
+          type: 'uint256',
+        },
+      ],
+      name: 'getZombieOwnerById',
+      outputs: [
+        {
+          internalType: 'address',
+          name: '',
+          type: 'address',
         },
       ],
       stateMutability: 'view',

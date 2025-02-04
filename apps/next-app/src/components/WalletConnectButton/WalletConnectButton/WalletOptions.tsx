@@ -1,3 +1,5 @@
+'use client'
+
 import { Button } from '@nextui-org/react'
 import * as React from 'react'
 import { useConnect } from 'wagmi'

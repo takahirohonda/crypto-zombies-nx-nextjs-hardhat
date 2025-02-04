@@ -35,7 +35,7 @@ contract ZombieFactory {
     return rand % dnaModulus; // this will ensure the DNA only has 16 digits.
   }
  
-  function createRamdomZombie(string memory _name) public {
+  function createRandomZombie(string memory _name) public {
 
     require(ownerZombieCount[msg.sender] == 0, "You already have a zombie");
     

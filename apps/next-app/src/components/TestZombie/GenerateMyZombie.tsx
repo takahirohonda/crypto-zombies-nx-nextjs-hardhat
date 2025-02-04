@@ -1,24 +1,20 @@
 'use client'
 
 import { Button } from '@nextui-org/react'
-import { zombieContractTestConfig } from '../config/zombieContractTestConfig'
+import { zombieContractTestConfig } from '../../config/zombieContractTestConfig'
 import { useWriteContract } from 'wagmi'
-import { useCallback, useEffect } from 'react'
-import { watchNewZombieEvent } from '../utils/watchGenerateZombieEvent'
+import { useCallback } from 'react'
 
 export const GenerateMyZombie = () => {
-  const { data, writeContract } = useWriteContract()
+  const { writeContract } = useWriteContract()
   const generate = useCallback(async () => {
     await writeContract({
       ...zombieContractTestConfig,
-      functionName: 'createRamdomZombie',
+      functionName: 'createRandomZombie',
       args: ['me me me'],
     })
   }, [writeContract])
 
-  useEffect(() => {
-    watchNewZombieEvent()
-  }, [])
   return (
     <>
       <Button onPress={generate}>Generate my zombie</Button>
