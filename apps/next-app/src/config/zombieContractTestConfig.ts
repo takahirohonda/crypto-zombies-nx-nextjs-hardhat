@@ -57,6 +57,19 @@ export const zombieContractTestConfig = {
     },
     {
       inputs: [],
+      name: 'getNumberForTesting',
+      outputs: [
+        {
+          internalType: 'uint256',
+          name: '',
+          type: 'uint256',
+        },
+      ],
+      stateMutability: 'pure',
+      type: 'function',
+    },
+    {
+      inputs: [],
       name: 'getZombieBySender',
       outputs: [
         {

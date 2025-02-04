@@ -1,5 +1,5 @@
-// export const ZombieTestContract = '0x0fA63384C096d99F0b066FF663848412B7cbAfdA'
-export const ZombieTestContract = '0x5FbDB2315678afecb367f032d93F642f64180aa3' // local
+export const ZombieTestContract = '0x134BD29759B27c9fC02665463800755E5C5a43Ff'
+// export const ZombieTestContract = '0x5FbDB2315678afecb367f032d93F642f64180aa3' // local
 
 // deployed as part of siwe...
 

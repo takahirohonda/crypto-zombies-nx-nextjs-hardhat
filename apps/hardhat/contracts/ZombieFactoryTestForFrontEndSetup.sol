@@ -70,5 +70,9 @@ contract ZombieFactoryTestForFrontEndSetup {
   function getZombieCountByOwner(address owner) public view returns (uint) {
     return ownerZombieCount[owner];
   }
+
+  function getNumberForTesting() public pure returns (uint) {
+    return 1;
+  }
 }
 

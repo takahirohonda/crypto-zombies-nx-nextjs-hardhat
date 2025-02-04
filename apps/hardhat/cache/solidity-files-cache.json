@@ -223,8 +223,8 @@
       ]
     },
     "/Users/taka/code/mdh/crypto-zombies-nx-nextjs-hardhat/apps/hardhat/contracts/ZombieFactoryTestForFrontEndSetup.sol": {
-      "lastModificationDate": 1738641947071,
-      "contentHash": "4ac32d099b89ba0134b204df234c5b0f",
+      "lastModificationDate": 1738644074564,
+      "contentHash": "73d6f537a096a5c0682f863acc4adf95",
       "sourceName": "contracts/ZombieFactoryTestForFrontEndSetup.sol",
       "solcConfig": {
         "version": "0.8.28",

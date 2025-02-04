@@ -33,6 +33,11 @@ export const MyZombie = () => {
     functionName: 'getCurrentMsgSenderValue',
   })
 
+  const { data: counterForCheck } = useReadContract({
+    ...zombieContractTestConfig,
+    functionName: 'getNumberForTesting',
+  })
+
   useEffect(() => {
     console.log(`checking zombieData: ${zombieData}`)
     console.log(`checking isLoading: ${isLoading}`)
@@ -48,7 +53,8 @@ export const MyZombie = () => {
     console.log(`checking owner: ${owner}`)
     console.log(`checking zombieCount: ${zombieCount}`)
     console.log(`checking sender.address: ${senderAddress}`)
-  }, [owner, senderAddress, zombieCount])
+    console.log(`checking getNumberForTesting: ${counterForCheck}`)
+  }, [counterForCheck, owner, senderAddress, zombieCount])
 
   return (
     <>
